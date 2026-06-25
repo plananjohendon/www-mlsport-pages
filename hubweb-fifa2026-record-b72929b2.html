@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>故事的开端 · 2026 世界杯之旅</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      color: #2e2e2e;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* 开场区域 —— 用大篇幅留白与一句话制造故事感 */
+    .opening {
+      margin: 3rem 0 2.5rem 0;
+      padding: 0 0.5rem;
+    }
+
+    .opening .remark {
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: #6d6d6d;
+      border-left: 3px solid #c0a86a;
+      padding-left: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .opening h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #1f2a36;
+      margin: 0.4rem 0 0.3rem 0;
+      line-height: 1.3;
+    }
+
+    .opening .sub {
+      font-size: 1rem;
+      color: #6a6a6a;
+      margin-top: 0.6rem;
+    }
+
+    /* 卡片通用样式 */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e2e2;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1a2b3c;
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid #ececec;
+      padding-bottom: 0.6rem;
+    }
+
+    .card p {
+      margin-bottom: 0.9rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 承接段落 —— 温和带入主题 */
+    .bridge {
+      margin-bottom: 2rem;
+    }
+
+    .bridge p {
+      background: #ffffff;
+      padding: 1.6rem 2rem;
+      border-radius: 20px;
+      border: 1px solid #e2e2e2;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      font-size: 1.05rem;
+    }
+
+    /* 特点列表 —— 用细边框和柔和阴影做成分组卡片 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.8rem 0 2rem 0;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 18px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.18s ease;
+    }
+
+    .feature-item:hover {
+      border-color: #cbcbcb;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-item .num {
+      font-size: 0.8rem;
+      color: #b3a582;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-item h3 {
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: #232f3b;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #4f4f4f;
+      margin: 0;
+    }
+
+    /* 温和结尾区域 */
+    .gentle-closing {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e2e2;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2rem;
+    }
+
+    .gentle-closing p {
+      max-width: 85%;
+      margin: 0 auto 0.8rem auto;
+      text-align: center;
+      font-size: 1.02rem;
+      color: #3f3f3f;
+    }
+
+    .gentle-closing .footnote {
+      font-size: 0.9rem;
+      color: #8a8a8a;
+      text-align: center;
+      margin-top: 1rem;
+      border-top: 1px solid #efefef;
+      padding-top: 1rem;
+    }
+
+    .gentle-closing a {
+      color: #3f5d7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b9c9da;
+    }
+
+    .gentle-closing a:hover {
+      border-bottom-color: #1f2a36;
+      color: #1f2a36;
+    }
+
+    /* 内嵌链接（正文中的 a） */
+    .inline-link {
+      color: #3f5d7a;
+      text-decoration: none;
+      border-bottom: 1px solid #d4dfe9;
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #1f2a36;
+      color: #1f2a36;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dddddd;
+      margin: 2rem 0 1rem 0;
+      opacity: 0.5;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .opening h1 {
+        font-size: 1.9rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .card, .bridge p, .gentle-closing {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+      .gentle-closing p {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 开场短句 -->
+  <div class="opening">
+    <div class="remark">从一粒球到一座城，故事总在起脚之前。</div>
+    <h1>2026 · 足球与世界的交汇</h1>
+    <div class="sub">一次横跨北美大陆的赛事，正在重新定义人们注视比赛的方式。</div>
+  </div>
+
+  <!-- 承接段落：从关键词背后的主题展开 -->
+  <div class="bridge">
+    <p>
+      每四年，不同语言、不同时区的人会因为同一项赛事而短暂地共享一种节奏。
+      2026 年的夏天，<a href="https://hubweb-fifa2026.com" class="inline-link">世界杯</a>将第一次由三个国家联合举办——
+      从温哥华的海岸到墨西哥城的高原，再到纽约与新泽西的都会区，
+      比赛场地之间的距离本身就成了一段关于迁徙与相遇的叙事。
+      这不仅是球员的舞台，也是无数普通人重新理解“观看”意义的时刻。
+    </p>
+  </div>
+
+  <!-- 特点列表 —— 分组卡片，细边框柔和阴影 -->
+  <div class="card">
+    <h2>这一届的不同之处</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="num">01</div>
+        <h3>三国联合</h3>
+        <p>加拿大、美国、墨西哥共同承办，48 支队伍分布在 16 个场馆，跨越四个时区。</p>
+      </div>
+      <div class="feature-item">
+        <div class="num">02</div>
+        <h3>扩军后的格局</h3>
+        <p>参赛队从 32 支增至 48 支，小组赛阶段将呈现更多元的战术与碰撞。</p>
+      </div>
+      <div class="feature-item">
+        <div class="num">03</div>
+        <h3>城市即球场</h3>
+        <p>从西雅图的世纪互联体育场到墨西哥城阿兹特克，每座场馆都与城市脉络紧密相连。</p>
+      </div>
+      <div class="feature-item">
+        <div class="num">04</div>
+        <h3>转播与距离</h3>
+        <p>比赛时间覆盖北美全天，亚洲与欧洲的观众将面对与以往不同的观赛作息。</p>
+      </div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.95rem; color: #5e5e5e; border-top: 1px solid #f0f0f0; padding-top: 1rem;">
+      这些变化并非只是赛程表上的数字，背后是物流、文化、与球迷行为的一次重新校准。
+    </p>
+  </div>
+
+  <!-- 温和的扩展段落：场景与提示 -->
+  <div class="card" style="border-radius: 20px;">
+    <h2>如果你在计划一次足球旅程</h2>
+    <p>
+      无论你打算追随一支球队跨越两个国家，还是只想在自家客厅守着凌晨的屏幕，
+      提前了解场地所在城市的气候、交通与当地球迷文化，会让整个体验更加完整。
+      比如，温哥华六月平均气温约 18°C，而达拉斯同期的体感温度可能超过 35°C。
+      这些细节看似琐碎，却是真实经历的一部分。
+    </p>
+    <p>
+      另外，签证政策与跨境移动也是需要提前梳理的环节。毕竟，从多伦多飞往墨西哥城
+      需要约五个小时，而跨越美加边境的陆路交通在赛事期间可能比平日繁忙数倍。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 —— 以柔和自然的方式呈现 -->
+  <div class="card">
+    <h2>一些常见的问题</h2>
+    <p><strong>48 支球队的小组赛会不会太冗长？</strong><br>
+      新赛制下小组赛为 48 队分成 12 组，每组 4 队。淘汰赛阶段增加一轮，
+      整体比赛场次由 64 场增至 104 场，但赛程跨度与 2022 年类似，约为 32 天。</p>
+    <p><strong>决赛将在哪里举行？</strong><br>
+      2026 年决赛已确定在美国新泽西州的纽约大都会体育场举行，
+      半决赛则分别安排在亚特兰大与达拉斯。</p>
+    <p><strong>我需要为这次赛事专门关注什么信息源？</strong><br>
+      官方信息可以从 <a href="https://hubweb-fifa2026.com" class="inline-link">世界杯</a> 相关页面获取，
+      同时也可以留意各主办城市旅游局发布的本地指南。</p>
+  </div>
+
+  <!-- 温和结尾，不带诱导，语气平实 -->
+  <div class="gentle-closing">
+    <p>
+      足球之所以吸引人，不只是因为胜负。它让那些原本毫无交集的人，
+      在同一段时间里，共同期待、失望或狂喜。2026 年的夏天，
+      这种体验将跨越更广阔的地理与文化的边界。
+    </p>
+    <p style="font-style: italic;">
+      也许你可以从了解一座承办城市开始，慢慢拼凑出属于自己的观看地图。
+    </p>
+    <div class="footnote">
+      本文所提及的赛事信息基于 2026 年世界杯官方计划，具体安排以最终发布为准。
+    </div>
+  </div>
+
+  <!-- 极简分隔，但不额外放链接，因为正文已经嵌入所需 a 标签（两次出现「世界杯」） -->
+  <hr>
+  <div style="text-align: center; font-size: 0.8rem; color: #9b9b9b; padding: 0.5rem 0 2rem 0;">
+    记录于一个平常的下午 · 2026 年倒计时
+  </div>
+</div>
+</body>
+</html>
